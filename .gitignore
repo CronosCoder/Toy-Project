@@ -1,0 +1,41 @@
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.env.*
+.envrc
+.DS_Store
+
+# Django
+db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Migrations
+**/migrations/
+**/migrations/*.pyc
+
+# Test and coverage
+.coverage
+htmlcov/
+*.cover
+*.py,cover
+coverage.xml
+nosetests.xml
+test-results/
+
+# Other
+*.swp
+*.swo
+*.bak
