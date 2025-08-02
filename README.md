@@ -95,8 +95,8 @@ Toy-Project/
 ---
 
 ## 👤 Author
-- **Your Name**
-- [GitHub](https://github.com/yourusername)
+- **Foysal (CronosCoder)**
+- [GitHub](https://github.com/CronosCoder)
 
 ---
 
