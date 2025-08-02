@@ -42,6 +42,8 @@ DEFAULT_APPS = [
 # Django REST Framework
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
 ]
 
 LOCAL_APPS = [
