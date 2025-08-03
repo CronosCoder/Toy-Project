@@ -35,7 +35,7 @@ class ProductImage(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='orders', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='orders', on_delete=models.CASCADE)
-    unint_price = models.DecimalField(max_digits=10, decimal_places=2)
+    unit_price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(default=1)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(max_length=2, choices=OrderStatus.choices, default=OrderStatus.PENDING)
