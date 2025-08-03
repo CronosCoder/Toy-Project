@@ -33,15 +33,18 @@ A smart Django project featuring a custom user model, payment gateway integratio
 
 ## 🏁 Quickstart
 
-```bash
-## Clone the repo
 
-[![Copy](https://img.shields.io/badge/Copy%20Command-git%20clone%20https%3A%2F%2Fgithub.com%2FCronosCoder%2FToy-Project.git-blue?style=for-the-badge)](https://github.com/CronosCoder/Toy-Project.git)
+<!-- Clone the repo (with copy button) -->
+<div align="left">
+  <code>git clone https://github.com/CronosCoder/Toy-Project.git</code>
+  <button onclick="navigator.clipboard.writeText('git clone https://github.com/CronosCoder/Toy-Project.git')" style="margin-left:10px;">Copy</button>
+</div>
 
-```bash
-git clone https://github.com/CronosCoder/Toy-Project.git
-```
-cd Toy-Project
+<div align="left" style="margin-top:8px;">
+  <code>cd Toy-Project</code>
+  <button onclick="navigator.clipboard.writeText('cd Toy-Project')" style="margin-left:10px;">Copy</button>
+</div>
+
 
 # Create and activate a virtual environment
 # Linux/Mac:
