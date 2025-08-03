@@ -1,23 +1,65 @@
 
-# Toy Project: Payment Gateway Integration & Shop API
+# 🛍️ Toy Project
+### Payment Gateway Integration & Shop API
 
-![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-API-blue)
-![Python](https://img.shields.io/badge/Python-3.12-blue)
+<div align="center">
+
+[![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-API-blue?style=for-the-badge&logo=django)](https://www.django-rest-framework.org/)
+[![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Stripe](https://img.shields.io/badge/Stripe-Integration-blue?style=for-the-badge&logo=stripe)](https://stripe.com/)
+
+<p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#api-endpoints">API</a> •
+  <a href="#testing">Testing</a>
+</p>
+
+</div>
+
+<hr>
 
 ## 🚀 Overview
 A smart Django project featuring a custom user model, payment gateway integration, and modular APIs for shop, orders, and transactions using Django REST Framework. Designed for learning, rapid prototyping, and real-world e-commerce scenarios.
 
 ---
 
-## 📦 Features
-- **Custom User Model** (email as username)
-- **Shop API**: Products, Categories, Stock, and more
-- **Order API**: Place and view orders
-- **Transaction API**: Payment gateway integration
-- **Role-based Permissions**: Admin-only product creation, authenticated order/transaction
-- **Service Layer**: Clean business logic separation
-- **Unit Tests**: API endpoints covered
-- **Modular Structure**: Easy to extend
+## ⭐ Features
+<table>
+  <tr>
+    <td>🔐 <b>Authentication</b></td>
+    <td>
+      • Custom User Model with email login<br>
+      • JWT Authentication<br>
+      • Role-based access control
+    </td>
+  </tr>
+  <tr>
+    <td>🛒 <b>Shop Features</b></td>
+    <td>
+      • Product & Category Management<br>
+      • Order Processing<br>
+      • Stock Management
+    </td>
+  </tr>
+  <tr>
+    <td>💳 <b>Payment</b></td>
+    <td>
+      • Stripe Integration<br>
+      • Transaction Management<br>
+      • Payment Status Tracking
+    </td>
+  </tr>
+  <tr>
+    <td>🛠️ <b>Technical</b></td>
+    <td>
+      • Clean Architecture<br>
+      • Service Layer Pattern<br>
+      • Comprehensive Test Coverage
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -98,16 +140,21 @@ python3.12 manage.py runserver
 
 ---
 
-## 🧩 Project Structure
-```
+## 📁 Project Structure
+```plaintext
 Toy-Project/
-├── core/           # Custom user model
-├── shop/           # Product, Category, Order, API, tests
-├── accounting/     # Payment logic & transactions
-├── manage.py
-├── requirements.txt
-├── README.md
-└── ...
+├── 📁 core/           # User Management
+│   ├── models.py      # Custom User Model
+│   └── views.py       # Authentication Views
+├── 📁 shop/           # Shop Features
+│   ├── models.py      # Product, Order Models
+│   ├── views/         # API Views
+│   ├── services.py    # Business Logic
+│   └── tests/         # Unit Tests
+├── 📁 accounting/     # Payment Integration
+│   ├── models.py      # Transaction Models
+│   └── services.py    # Payment Processing
+└── 📄 manage.py       # Django CLI
 ```
 
 ---
