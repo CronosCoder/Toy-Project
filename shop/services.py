@@ -20,6 +20,15 @@ class OrderService:
     model_class = Order
     product_service = ProductService()
 
+    def get_order_by_id(self, order_id):
+        try:
+            return self.model_class.objects.get(id=order_id)
+        except Exception as e:
+            raise Exception(f"Order not found {str(e)}")
+
+    def create(self, **kwargs):
+        return self.model_class.objects.create(**kwargs)
+
     def create_order(self, validated_data, request):
         product= validated_data.get('product')
         quantity = validated_data.get('quantity', 1)
@@ -32,7 +41,7 @@ class OrderService:
             "quantity": validated_data.get('quantity', 1),
             "total_amount": product.price * validated_data.get('quantity', 1),
         }
-        order =self.model_class.objects.create(**order_data)
+        order = self.create(**order_data)
         if order:
             product.stock -= order.quantity
             product.save()
