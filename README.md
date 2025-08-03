@@ -35,12 +35,12 @@ A smart Django project featuring a custom user model, payment gateway integratio
 
 
 <!-- Clone the repo (with copy button) -->
-<div align="left">
+<div align="left" style="padding:5px;">
   <code>git clone https://github.com/CronosCoder/Toy-Project.git</code>
   <button onclick="navigator.clipboard.writeText('git clone https://github.com/CronosCoder/Toy-Project.git')" style="margin-left:10px;">Copy</button>
 </div>
 
-<div align="left" style="margin-top:8px;">
+<div align="left" style="margin-top:8px; padding:5px;">
   <code>cd Toy-Project</code>
   <button onclick="navigator.clipboard.writeText('cd Toy-Project')" style="margin-left:10px;">Copy</button>
 </div>
@@ -49,14 +49,17 @@ A smart Django project featuring a custom user model, payment gateway integratio
 # Create and activate a virtual environment
 # Linux/Mac:
 python3.12 -m venv .venv
+
 source .venv/bin/activate
 
 # Windows (cmd):
 python3.12 -m venv .venv
+
 .venv\Scripts\activate
 
 # Windows (PowerShell):
 python3.12 -m venv .venv
+
 .venv\Scripts\Activate.ps1
 
 # Install dependencies
