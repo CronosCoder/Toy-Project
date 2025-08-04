@@ -14,7 +14,18 @@ class TransactionCreateAPIView(views.APIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         try:
-            transaction = self.service.create_transaction(serializer.validated_data, request)
-            return Response({"message": "Transaction created successfully", "transaction_id": transaction.id}, status=status.HTTP_201_CREATED)
+            url = self.service.create_transaction(serializer.validated_data, request)
+            return Response({"payment_url": url}, status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        
+class PaymentSuccessAPIView(views.APIView):
+    def get(self, request):
+        # Handle successful payment logic here
+        return Response({"message": "Payment successful"}, status=status.HTTP_200_OK)
+
+
+class PaymentFailAPIView(views.APIView):
+    def get(self, request):
+        # Handle failed payment logic here
+        return Response({"message": "Payment failed"}, status=status.HTTP_400_BAD_REQUEST)

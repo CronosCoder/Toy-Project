@@ -1,10 +1,11 @@
-from .models import Transaction
+from accounting.models import Transaction
 from shop.services import OrderService
-
+from accounting.services.stripe_accounting_service import StripeAccountingService
 
 class TransactionService:
     model_class = Transaction
     order_service = OrderService()
+    stripe_accounting_service = StripeAccountingService()
 
     def create(self, **kwargs):
         return self.model_class.objects.create(**kwargs)
@@ -23,7 +24,9 @@ class TransactionService:
             "quantity": order.quantity,
             "total_price": order.total_amount,
         }
-        return self.create(**transaction_data)
+        transaction =self.create(**transaction_data)
+        stripe_url = self.stripe_accounting_service.create_checkout_session(transaction)
+        return stripe_url
 
     def get_transactions_by_user(self, user):
         return self.model_class.objects.filter(user=user).order_by('-created_at')
